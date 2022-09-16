@@ -8,7 +8,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-api_key = 'AIzaSyAETDAtC0wY9YlCbkqy9frUrEjZ7xw3Rls'
+api_key = '<YOUR API KEY here>'
 youtube = build('youtube', 'v3', developerKey=api_key)
 
 def get_channel_stats(youtube, channel_id):
