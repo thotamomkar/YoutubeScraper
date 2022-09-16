@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Results page</title>
+
+<!--       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+-->
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+      <div class="header", align="center"><h3>Youtube channel details</h3></div>
+
+   <table cellspacing="0", border="1px solid black", align="center", width="90%">
+      <tr align="center">
+         <th width="40%">Title</th>
+         <th width="10%">Video URL</th>
+         <th>Views</th>
+         <th>Likes</th>
+         <th>Comments</th>
+          <th width="15%">Thumbnail URL</th>
+      </tr>
+         {% for review in reviews %}
+      <tr align="center">
+          <td>{{review['Title']}}</td>
+         <td><a href="{{review['URL']}}">Video URL</a></td>
+         <td>{{review['Views']}}</td>
+         <td>{{review['Likes']}}</td>
+         <td>{{review['Comments']}} </td>
+          <td><a href="{{review['Thumbnail']}}">Video thumbnail</a> </td>
+       {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
