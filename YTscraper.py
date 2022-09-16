@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request,jsonify
 from flask_cors import CORS,cross_origin
 import requests
-#from bs4 import BeautifulSoup as bs
-#from urllib.request import urlopen as uReq
 from googleapiclient.discovery import build
 import pandas as pd
 
@@ -93,9 +91,6 @@ def index():
             video_ids = get_video_ids(youtube, playlist_id)
             video_details = get_video_details(youtube, video_ids)
 
-#            mydict = {"Product": searchString, "Name": name, "Rating": rating, "CommentHead": commentHead,
-#                          "Comment": custComment}
-#            reviews.append(mydict)
             return render_template('results.html', reviews=video_details[0:(len(video_details)-1)])
         except Exception as e:
             print('The Exception message is: ',e)
